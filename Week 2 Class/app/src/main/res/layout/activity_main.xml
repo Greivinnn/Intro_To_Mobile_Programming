@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF9800"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/greenBoxId"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="70dp"
+        android:scaleType="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/green_square" />
+
+    <ImageView
+        android:id="@+id/greenBoxId2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/greenBoxId"
+        app:layout_constraintStart_toEndOf="@+id/greenBoxId"
+        app:srcCompat="@drawable/green_square" />
+
+    <ImageView
+        android:id="@+id/greenBoxId3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="15dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="@+id/greenBoxId"
+        app:layout_constraintStart_toEndOf="@+id/greenBoxId2"
+        app:srcCompat="@drawable/green_square" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginEnd="25dp"
+        android:background="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/RockButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="250dp"
+        android:text="ROCK"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <Button
+        android:id="@+id/PaperButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="248dp"
+        android:text="PAPER"
+        app:layout_constraintStart_toEndOf="@+id/RockButton"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <Button
+        android:id="@+id/ScissorsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="248dp"
+        android:text="SCISSORS"
+        app:layout_constraintStart_toEndOf="@+id/PaperButton"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="A.I"
+        android:textSize="55sp"
+        app:layout_constraintStart_toStartOf="@+id/greenBoxId"
+        app:layout_constraintTop_toBottomOf="@+id/greenBoxId" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:text="YOU"
+        android:textSize="55sp"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/PlayerChoice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:srcCompat="@drawable/scissors" />
+
+    <ImageView
+        android:id="@+id/playerChoice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/PlayerChoice"
+        app:layout_constraintStart_toStartOf="@+id/PlayerChoice"
+        app:layout_constraintTop_toBottomOf="@+id/greenBoxId3"
+        app:srcCompat="@drawable/scissors"
+        tools:srcCompat="@drawable/rock" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
