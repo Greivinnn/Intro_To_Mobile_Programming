@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userAccScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#9C27B0"
+    tools:context=".UserAccountActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/winder_small_background" />
+
+    <EditText
+        android:id="@+id/nameTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="Your name..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/pfpOne"
+        app:layout_constraintTop_toBottomOf="@+id/pfpOne" />
+
+    <TextView
+        android:id="@+id/screenInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="casual"
+        android:text="Customize or update your personal information here."
+        android:textColor="#FFEB3B"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/screenInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="casual"
+        android:text="Choose an avatar:"
+        android:textColor="#FFEB3B"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/screenInfo"
+        app:layout_constraintTop_toBottomOf="@+id/screenInfo" />
+
+    <TextView
+        android:id="@+id/screenInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="casual"
+        android:text="Personal Information:"
+        android:textColor="#FFEB3B"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/occupationTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/occupationTextBox" />
+
+    <ImageView
+        android:id="@+id/pfpOne"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/screenInfo2"
+        app:layout_constraintTop_toBottomOf="@+id/screenInfo2"
+        app:srcCompat="@drawable/pfp1" />
+
+    <ImageView
+        android:id="@+id/pfpTwo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/pfpOne"
+        app:layout_constraintTop_toTopOf="@+id/pfpOne"
+        app:srcCompat="@drawable/pfp2" />
+
+    <ImageView
+        android:id="@+id/pfpThree"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/pfpTwo"
+        app:layout_constraintTop_toTopOf="@+id/pfpOne"
+        app:srcCompat="@drawable/pfp3" />
+
+    <ImageView
+        android:id="@+id/pfpFour"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/pfpThree"
+        app:layout_constraintTop_toTopOf="@+id/pfpOne"
+        app:srcCompat="@drawable/pfp4" />
+
+    <ImageView
+        android:id="@+id/pfpFive"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@+id/pfpFour"
+        app:layout_constraintTop_toTopOf="@+id/pfpOne"
+        app:srcCompat="@drawable/pfp5" />
+
+    <EditText
+        android:id="@+id/occupationTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your occupation..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/nameTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextBox" />
+
+    <EditText
+        android:id="@+id/heightTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your height in cm..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/screenInfo3"
+        app:layout_constraintTop_toBottomOf="@+id/screenInfo3" />
+
+    <EditText
+        android:id="@+id/weightTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your weight in kg..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/heightTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/heightTextBox" />
+
+    <EditText
+        android:id="@+id/ageTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your age..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/weightTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/weightTextBox" />
+
+    <EditText
+        android:id="@+id/eyeTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your eye color..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/ageTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/ageTextBox" />
+
+    <EditText
+        android:id="@+id/hairTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your hair color..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/eyeTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/eyeTextBox" />
+
+    <EditText
+        android:id="@+id/bodyTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your body type..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/hairTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/hairTextBox" />
+
+    <EditText
+        android:id="@+id/preferencesTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="Your preferences..."
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="@+id/bodyTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/bodyTextBox" />
+
+    <Button
+        android:id="@+id/saveInfoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="#673AB7"
+        android:text="SAVE"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/previewPfp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/screenInfo2"
+        app:layout_constraintTop_toBottomOf="@+id/screenInfo"
+        app:srcCompat="@drawable/nopfp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
