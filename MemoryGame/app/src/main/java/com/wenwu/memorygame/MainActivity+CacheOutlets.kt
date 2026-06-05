@@ -14,17 +14,20 @@ class TileViewHolder(val root: FrameLayout) : RecyclerView.ViewHolder(root) {
     val label: TextView = root.findViewById(R.id.tileLabel_id)
 }
 
-
+// The GameAdapter is the bridge between AppData.tiles and the RecyclerView
+// it creates tiles views, binds data to the tiles, and handles the tap logic
 class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
 
 
-    private var firstFlippedIndex: Int = -1
-    private var secondFlippedIndex: Int = -1
+    private var firstFlippedIndex: Int = -1 // first tiles -1 = not flipped 0 = flipped
+    private var secondFlippedIndex: Int = -1 // second tiles -1 = not flipped 0 = flipped
 
+    // locks the board, when players click on 2 tiles that do not match the board is locked until the 2 tiles get flicked back
     private var isBoardLocked: Boolean = false
 
     override fun getItemCount(): Int = AppData.tiles.size
 
+    // called when the RecyclerView needs a new ViewHolder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TileViewHolder {
         val root = LayoutInflater
             .from(parent.context)
@@ -32,15 +35,23 @@ class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
         return TileViewHolder(root)
     }
 
+    // called everytime a tiles needs to display data
     override fun onBindViewHolder(holder: TileViewHolder, position: Int) {
         renderTile(holder, AppData.tiles[position])
 
         holder.root.setOnClickListener {
+            // ask the ViewHolder for its current position at tap time
             val currentPosition = holder.bindingAdapterPosition
+
             if (currentPosition == RecyclerView.NO_ID.toInt()) return@setOnClickListener
 
+            // get data if the null check is passed
             val tile = AppData.tiles[currentPosition]
 
+            // ignores tap events if the board is locked
+            // how the return@setOnClickListener works
+            // this is telling the compiler that we want to exit the lambda function
+            // not the whole function, so it just skips to the rest of the code if the board is locked
             if (isBoardLocked) return@setOnClickListener
             if (tile.isMatched) return@setOnClickListener
             if (tile.isFlipped) return@setOnClickListener
@@ -48,15 +59,18 @@ class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
             tile.isFlipped = true
             notifyItemChanged(currentPosition)
 
+            // check which one is being flip second or first tile
             if (firstFlippedIndex == -1) {
                 firstFlippedIndex = currentPosition
             } else {
                 secondFlippedIndex = currentPosition
                 isBoardLocked = true
 
+                // stores the firs and second tile flipped data
                 val firstTile = AppData.tiles[firstFlippedIndex]
                 val secondTile = AppData.tiles[secondFlippedIndex]
 
+                // check if they match
                 if (firstTile.pairValue == secondTile.pairValue) {
                     firstTile.isMatched = true
                     secondTile.isMatched = true
@@ -64,6 +78,7 @@ class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
                     notifyItemChanged(secondFlippedIndex)
                     resetSelection()
                     isBoardLocked = false
+                    // if no match then flip it back to original postion
                 } else {
                     Handler(Looper.getMainLooper()).postDelayed({
                         firstTile.isFlipped = false
@@ -72,14 +87,13 @@ class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
                         notifyItemChanged(secondFlippedIndex)
                         resetSelection()
                         isBoardLocked = false
-                    }, 900L)
+                    }, 500L)
                 }
             }
         }
     }
 
-    // ── Visual state ─────────────────────────────────────────────────────────
-
+    // how the tiles look when flipped, matched, or not flipped
     private fun renderTile(holder: TileViewHolder, tile: Tile) {
         when {
             tile.isMatched -> {
@@ -94,7 +108,7 @@ class GameAdapter : RecyclerView.Adapter<TileViewHolder>() {
             }
             else -> {
                 holder.label.text = ""
-                holder.root.setBackgroundColor(Color.parseColor("#1565C0"))
+                holder.root.setBackgroundColor(Color.parseColor("#F44336"))
                 holder.label.setTextColor(Color.TRANSPARENT)
             }
         }

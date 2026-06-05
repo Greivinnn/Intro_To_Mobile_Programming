@@ -7,9 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
-// Each tile holds a pair value, plus flip/match state
+
 data class Tile(
-    val pairValue: Int,          // 1–(gridSize*gridSize/2), two tiles share the same value
+    val pairValue: Int,
     var isFlipped: Boolean = false,
     var isMatched: Boolean = false
 )
