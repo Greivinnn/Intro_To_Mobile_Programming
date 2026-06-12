@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+	<style name="DarkDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+		<item name="android:background">#1a1a22</item>
+		<item name="android:textColor">#e8e0d0</item>
+		<item name="colorAccent">#c9bfff</item>
+	</style>
+
+    <style name="Theme.GreivinWen_Final_Project" parent="Base.Theme.GreivinWen_Final_Project" />
+</resources>
